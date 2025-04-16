@@ -10,7 +10,7 @@ namespace Pendu
             const int MAX_ESSAIS = 6;
 
             // Choix du mot à deviner
-            string motADeviner = ChoisirMot();
+            string motADeviner = Dico.ChoisirMot();
             string motCache = new string('_', motADeviner.Length);
             int essaisRestants = MAX_ESSAIS;
             List<char> lettresDejaEssayees = new List<char>();
@@ -59,27 +59,6 @@ namespace Pendu
             
             // Retourne "true" si le mot a été deviné, "false" sinon
             return (motCache == motADeviner);
-        }
-
-        public static string ChoisirMot()
-        {
-            // Liste de mots à deviner
-            List<string> mots = new List<string>
-            {
-                "pamplemousse",
-                "ordinateur",
-                "programmer",
-                "dinosaure",
-                "jeu",
-                "champignon",
-                "kayak",
-                "deltaplane",
-                "ficelle",
-                "automobile"
-            };
-            Random random = new Random();
-            int index = random.Next(mots.Count);
-            return mots[index];
         }
     }
 }
